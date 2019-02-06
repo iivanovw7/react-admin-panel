@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render correctly in "debug" mode 1`] = `
+<div
+  className="header"
+>
+  <div>
+    <i
+      className="material-icons resizing"
+    />
+  </div>
+  <div
+    className="title"
+  >
+    <h3 />
+  </div>
+  <div
+    style={
+      Object {
+        "alignItems": "center",
+        "display": "flex",
+      }
+    }
+  >
+    <span
+      style={
+        Object {
+          "marginRight": "10px",
+        }
+      }
+    />
+    <button
+      className="header_button primary ripple"
+      onClick={[Function]}
+    >
+      Выйти
+    </button>
+  </div>
+</div>
+`;

@@ -1,0 +1,22 @@
+
+//add margin
+@mixin push--auto
+  margin:
+    left: auto
+    right: auto
+
+
+//styling placeholders
+@mixin placeholder()
+  input::-webkit-input-placeholder
+    @content
+  input:-moz-placeholder
+    @content
+  input::-moz-placeholder
+    @content
+  input:-ms-input-placeholder
+    @content
+
+
+
+

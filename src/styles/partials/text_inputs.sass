@@ -1,0 +1,44 @@
+@import "base"
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus
+  outline: none
+
+input:-webkit-autofill:focus, input:-webkit-autofill, input:-webkit-autofill:active
+  -webkit-box-shadow: 0 0 0 50px $themeColor_background_3 inset
+  -webkit-text-fill-color: #999
+  border-color: $themeColor_text_input_1
+  caret-color: $themeColor_text
+
+
+input[type=text],input[type=email],input[type=password]
+  border-color: transparent
+
+
+
+input[type=text]:focus, :active, ::-moz-focus-inner,
+input[type=email]:focus, :active, ::-moz-focus-inner,
+input[type=password]:focus, :active, ::-moz-focus-inner
+  color: $themeColor_text
+  //border-color: $themeColor_text
+  outline-width: 0
+
+
+input[type=text],input[type=email],input[type=password]
+  -webkit-appearance: none
+  -webkit-box-shadow: 0 0 0 30px $themeColor_background_3 inset
+  width: 100%
+  border-color: $themeColor_text_input_1
+  border-width: 0 0 1px 0
+  color: $themeColor_text
+  background: $themeColor_background_2
+  @include rem(padding, 3%)
+  @include rem(margin-bottom, 3%)
+
+
+
+
+
+

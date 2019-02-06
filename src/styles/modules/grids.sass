@@ -1,0 +1,25 @@
+@import 'breakpoints'
+
+//getting breakpoints
+$map-grid-props: ('-xs': $grid__bp-xs, '-sm': $grid__bp-sm, '-md': $grid__bp-md, '-lg': $grid__bp-lg)
+
+
+@mixin create-mq($breakpoint)
+  @if($breakpoint == 0)
+    @content
+  @else
+    @media screen and (min-width: $breakpoint * 1px)
+      @content
+
+
+@mixin create-col-classes($modifier, $grid-cols, $breakpoint)
+  @include create-mq($breakpoint)
+    @for $i from 1 through $grid-cols
+      &__col#{$modifier}-#{$i}
+        flex-basis: (100 / ($grid-cols / $i) ) * 1%
+
+
+
+
+
+

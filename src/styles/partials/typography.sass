@@ -1,0 +1,67 @@
+@import "base"
+
+
+//fonts related stylesheets
+
+//main fonts
+html
+  font-weight: $regular
+  font-family: $base-font-family
+  color: $themeColor_text
+
+  //setting resizing font for mobile
+  @media (max-width: 1000px)
+    font-size: calc(12px + .5vw)
+
+
+
+//adding fixed in rems
+@media (min-width: 1000px)
+
+  input[type=text],input[type=email],input[type=password]
+    @include rem(font-size, 18px)
+
+  button
+    @include rem(font-size, 20px)
+
+  .container
+    @include rem(font-size, 18px)
+
+  .title
+    @include rem(font-size, 28px)
+
+  .placeholder
+    @include rem(font-size, 6px)
+
+  .navbar_item
+    @include rem(font-size, 22px)
+
+  .material-icons
+    &.resizing
+      @include rem(font-size, 48px)
+
+
+
+.title
+  font-weight: $bold
+  font-family: $base-font-family
+  color: $themeColor_text
+
+
+
+.placeholder
+  font-weight: $light
+  font-family: $base-font-family
+
+
+button
+  font-weight: $bold
+  font-family: $base-font-family
+  color: $themeColor_text
+
+
+
+
+
+
+

@@ -1,0 +1,231 @@
+@import "partials/base"
+
+//header width
+$header-height: 8vh
+
+
+*, *:before, *:after
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+
+
+html
+  background-color: $themeColor_background_1
+
+
+body
+  @include rem(padding, 3%)
+  padding: 0
+  display: flex
+  min-height: 100vh
+  flex-direction: column
+  margin: 0 auto
+  background-color: $themeColor_background_2
+
+  .active
+    outline: 0
+
+
+//full height element calculation
+.full-height
+  height: 100vh - $header-height
+
+
+//styling header
+.header
+  z-index: 40000
+  position: fixed
+  width: 100%
+  background: $themeColor_background_1
+  height: $header-height
+  display: flex
+  flex-wrap: nowrap
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+  @include rem(padding-left, 0.7)
+  @include rem(padding-right, 0.7)
+
+
+.wrapper
+  max-width: $grid__bp-md * 1px
+  margin: 0 auto
+  &--fluid
+    margin: 0
+    max-width: 100%
+    padding-top: $header-height
+
+
+  &__row
+    display: flex
+    flex-wrap: wrap
+    width: 100%
+
+  @each $modifier , $breakpoint in $map-grid-props
+    @include create-col-classes($modifier, $grid__cols, $breakpoint)
+
+
+.wrapper
+  @at-root
+    [class*='wrapper__col-']
+      &.higher
+        min-height: 250px
+
+
+      &.child
+        min-height: 220px
+        align-items: center
+        @include rem(padding, 0.1)
+
+        .profile //elements for profile page
+          border: 1px solid gray
+          @include rem(margin, 0.1)
+          width: 100%
+          height: 100%
+          align-items: center
+          display: flex
+          flex-direction: column
+          justify-content: center
+
+        .list //elements for Users list page
+          border: 1px solid gray
+          @include rem(margin, 0.1)
+          width: 100%
+          height: 100%
+          align-items: center
+          display: flex
+          flex-direction: column
+
+
+      display: flex
+      align-items: flex-start
+      justify-content: space-around
+
+
+
+
+@media screen and (max-width: $grid__bp-lg * 1px)
+  .content_wrapper
+    padding-top: $header-height * 2
+
+  nav, ul
+    height: 100%
+    align-items: center
+
+  li
+    @include rem(margin, 2%)
+
+
+
+//@media screen and (min-width: $grid__bp-lg * 1px)
+
+
+.sidebar-layout
+  @include shadows_lg
+  background-color: $themeColor_background_3
+  @include rem(padding, 1)
+  z-index: 20000
+
+
+  //top navbar
+  @media screen and (max-width: $grid__bp-lg * 1px)
+    position: fixed
+    width: 100%
+
+
+    aside
+      height: $header-height
+      width: 100%
+
+      ul
+        display: flex
+        flex-direction: row
+        flex-wrap: nowrap
+        margin: 0
+        list-style-type: none
+        padding: 0
+
+
+
+    .avatar_wrapper
+      display: none
+
+
+
+
+  //sidebar
+  @media screen and (min-width: $grid__bp-lg * 1px)
+
+    aside
+      height: 100vh - $header-height
+
+
+      display: flex
+      flex-direction: column
+      width: 100%
+
+
+      ul
+        list-style-type: none
+        padding: 0
+
+      li
+        margin: 30px
+
+
+
+.avatar_wrapper
+  @include shadows_lg
+  @include rem(padding, 3)
+  @include rem(margin-top, 2)
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  align-content: center
+  align-self: center
+
+  background-color: $themeColor_icon_wrapper
+  border-radius: 50%
+  text-align: center
+  max-height: 150px
+  max-width: 150px
+
+
+  &:hover
+    background-color: $btn_hover_background_secondary
+    text-decoration: none
+    cursor: pointer
+    outline: 0
+
+
+.loaderWrapper
+  display: flex
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  margin-top: 30vh
+
+  div
+    @include rem(margin-top, 0.5)
+
+
+
+//lists layout styling
+table
+  width: 100%
+
+th, td
+  width: 20%
+  text-align: center
+
+th
+  background-color: $btn_hover_background_secondary
+
+.list_element
+  &:hover
+    background-color: $btn_hover_background_secondary
+    text-decoration: none
+    cursor: pointer
+    outline: 0

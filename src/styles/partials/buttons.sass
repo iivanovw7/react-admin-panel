@@ -1,0 +1,58 @@
+@import "base"
+
+//creating buttons
+@mixin button_effects
+
+  &.primary
+    background-color: $btn_background_primary
+    border: 1px solid $themeColor_main
+
+  &.secondary
+    background-color: $btn_background_secondary
+    text-decoration: none
+
+
+  border-radius: 4px
+  color: $themeColor_text
+
+  &:hover
+    &.primary
+      background-color: $btn_hover_background_primary
+      border: 1px solid $themeColor_main_hover
+
+    &.secondary
+      background-color: $btn_hover_background_secondary
+      text-decoration: none
+
+    cursor: pointer
+    outline: 0
+
+  &:focus
+    outline: none
+
+
+.default_button
+  @include button_effects
+  @include rem(padding, 1)
+  @include rem(margin, 1)
+
+
+.header_button
+  @include button_effects
+  @include rem(width, 5)
+  max-height: 36px
+  min-height: 36px
+
+.popup_button
+  @include button_effects
+  @include rem(padding, 1)
+  @include rem(margin-right, 1)
+  @include rem(margin-top, 1)
+  float: bottom
+
+.social_login_button
+  @include button_effects
+  @include rem(padding, 0.5)
+  @include rem(margin-top, 0.5)
+  max-height: 48px
+  max-width: 48px
